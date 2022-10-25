@@ -1,11 +1,20 @@
 /** code by webdevtrick ( https://webdevtrick.com ) **/
 @font-face {
+<<<<<<< HEAD
+    font-family: "NotoSansKR-Medium";
+    src:url("NotoSansKR-Medium.otf") format("opentype");
+    font-weight: normal;
+}
+header {
+    font-family: "NotoSansKR-Medium", serif;
+=======
     font-family: "DalseoDarling";
     src:url("DalseoDarling.ttf") format("truetype");
     font-weight: normal;
 }
 header {
     font-family: "DalseoDarling", serif;
+>>>>>>> 8a4ccccf1449c53c33e3f49fb764fb52584aae44
     font-size-adjust: 100;
     position: fixed;
     top: 0;
@@ -21,7 +30,11 @@ header {
     align-items: center;
 }
 a{
+<<<<<<< HEAD
+    font-family: "NotoSansKR-Medium", serif;
+=======
     font-family: "DalseoDarling", serif;
+>>>>>>> 8a4ccccf1449c53c33e3f49fb764fb52584aae44
     font-size-adjust: 100;
     text-decoration-line: none;
 }
@@ -38,7 +51,11 @@ a:active {
   color : springgreen;
 }
 body {
+<<<<<<< HEAD
+    font-family: "NotoSansKR-Medium", serif;
+=======
     font-family: "DalseoDarling", serif;
+>>>>>>> 8a4ccccf1449c53c33e3f49fb764fb52584aae44
     font-size-adjust: 100;
     margin: 0;
     padding-top:50px;
@@ -47,7 +64,11 @@ body {
     background-size: cover;
 }
 p{
+<<<<<<< HEAD
+    font-family: "NotoSansKR-Medium", serif;
+=======
     font-family: "DalseoDarling", serif;
+>>>>>>> 8a4ccccf1449c53c33e3f49fb764fb52584aae44
     font-size-adjust: 100;
     font-weight: bold;
     padding: 10px;
@@ -55,9 +76,67 @@ p{
     background-color: rgba( 255, 255, 255, 0.7 );
 }
 h1, span {
+<<<<<<< HEAD
+    font-family: "NotoSansKR-Medium", serif;
+=======
     font-family: "DalseoDarling", serif;
+>>>>>>> 8a4ccccf1449c53c33e3f49fb764fb52584aae44
     font-size-adjust: 100;
     /*margin: 0;*/
     /*padding-right: 20px;*/
     align-content: center;
+<<<<<<< HEAD
 }
+
+@keyframes spinner {
+  from {transform: rotate(0deg); }
+  to {transform: rotate(360deg);}
+}
+
+.spinner::after {
+  content: '';
+  box-sizing: border-box;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 64px;
+  height: 64px;
+  margin-top: -32px;
+  margin-left: -32px;
+  border-radius: 50%;
+  border: 4px solid lightgrey;
+  border-top-color: blue;
+  animation: spinner .8s linear infinite;
+}
+
+/* page-loading */
+  #loading {
+  	width: 100%;
+  	height: 100%;
+  	top: 0;
+  	left: 0;
+  	position: fixed;
+  	display: block;
+  	opacity: 0.6;
+  	background: #e4e4e4;
+  	z-index: 99;
+  	text-align: center;
+  }
+
+
+
+  #loading > img {
+  	position: absolute;
+  	top: 50%;
+  	left: 50%;
+  	z-index: 100;
+  }
+   #loading > p {
+    	position: absolute;
+    	top: 57%;
+    	left: 43%;
+    	z-index: 101;
+    }
+=======
+}
+>>>>>>> 8a4ccccf1449c53c33e3f49fb764fb52584aae44
