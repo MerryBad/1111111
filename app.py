@@ -9,7 +9,11 @@ from werkzeug.utils import secure_filename
 from models import vgg_attention
 import torch
 import pandas as pd
+<<<<<<< HEAD
+#from test_attention import *
+=======
 from test_attention import *
+>>>>>>> 8a4ccccf1449c53c33e3f49fb764fb52584aae44
 import numpy as np
 import matplotlib.pyplot as plt
 import matplotlib as mpl
@@ -20,9 +24,15 @@ font = font_manager.FontProperties(fname=font_path).get_name()
 rc('font', family=font)
 
 app = Flask(__name__)
+<<<<<<< HEAD
+model_path = 'C:/Users/sinb1/1111111/static/vgg_mm16_add_attention-141-best.pth'
+model_pred = vgg_attention.vgg16_bn(12, 15)
+model_pred.load_state_dict(torch.load(model_path, map_location=torch.device('cpu')))
+=======
 model_path = 'E:/web/static/vgg_mm16_add_attention-141-best.pth'
 model_pred = vgg_attention.vgg16_bn(12, 15)
 model_pred.load_state_dict(torch.load(model_path))
+>>>>>>> 8a4ccccf1449c53c33e3f49fb764fb52584aae44
 model_pred.eval()  # autograd 끄기
 
 # TODO          0       1         2         3       4     5      6       7
@@ -97,6 +107,16 @@ def get_prediction(input_tensor):
     image_name = time.strftime("%Y%m%d-%H%M%S")
     plt.clf()
     plt.bar(top3_major_name, top3_major)
+<<<<<<< HEAD
+    plt.savefig('C:/Users/sinb1/1111111/static/IMG/' + image_name + 'major.jpg')
+    plt.clf()
+    plt.bar(top3_minor_name, top3_minor)
+    plt.savefig('C:/Users/sinb1/1111111/static/IMG/' + image_name + 'minor.jpg')
+    return major_name[top1_preds_major], minor_name[top1_preds_minor], 'IMG/' + image_name + 'major.jpg', 'IMG/' + image_name + 'minor.jpg ', log_time
+
+
+app.config['UPLOAD_FOLDER'] = 'C:/Users/sinb1/1111111/static/IMG'
+=======
     plt.savefig('E:/web/static/IMG/' + image_name + 'major.jpg')
     plt.clf()
     plt.bar(top3_minor_name, top3_minor)
@@ -105,6 +125,7 @@ def get_prediction(input_tensor):
 
 
 app.config['UPLOAD_FOLDER'] = 'E:/web/static/IMG'
+>>>>>>> 8a4ccccf1449c53c33e3f49fb764fb52584aae44
 
 
 @app.route('/')
@@ -122,6 +143,32 @@ def model():
 def gradcam_home():
     return render_template('gradcam_home.html')
 
+<<<<<<< HEAD
+#
+# @app.route('/upload_grad', methods=['POST'])
+# def upload_grad():
+#     file = request.files['file']
+#     filename = file.filename
+#     file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
+#     img_src = 'E:/web/static/IMG/' + filename
+#
+#     img = transform_image(img_src)
+#     major, minor, _, _, log_time= get_prediction(img)
+#     major = '예측 작물 종류 : ' + major
+#     minor = '생육 단계 : ' + minor
+#     start_time_gard = time.time()
+#     grad_major_image = grad_major(img_src)
+#     grad_minor_image = grad_minor(img_src)
+#     end_time_grad = time.time()
+#     log_time_grad = end_time_grad - start_time_gard
+#     log_time_grad = 'Grad-CAM 실행 시간 : ' + str(log_time_grad)[:5] + 's'
+#
+#     filename = 'IMG/' + filename
+#     return render_template('gradcam_home.html', filename=filename, major=major, minor=minor,
+#                            grad_major_image=grad_major_image,
+#                            grad_minor_image=grad_minor_image, time=log_time, time_grad=log_time_grad)
+#
+=======
 
 @app.route('/upload_grad', methods=['POST'])
 def upload_grad():
@@ -146,6 +193,7 @@ def upload_grad():
                            grad_major_image=grad_major_image,
                            grad_minor_image=grad_minor_image, time=log_time, time_grad=log_time_grad)
 
+>>>>>>> 8a4ccccf1449c53c33e3f49fb764fb52584aae44
 
 @app.route('/upload_model', methods=['POST'])
 def upload_model():
@@ -154,7 +202,11 @@ def upload_model():
     print(filename)
     file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
     real_major, real_minor = '', ''
+<<<<<<< HEAD
+    real_name = pd.read_csv('C:/Users/sinb1/1111111/static/test_label.csv', names=["file_Name", "pl_Name", "pl_Step", 'pl_Name+Step'],
+=======
     real_name = pd.read_csv('E:/web/static/test_label.csv', names=["file_Name", "pl_Name", "pl_Step", 'pl_Name+Step'],
+>>>>>>> 8a4ccccf1449c53c33e3f49fb764fb52584aae44
                             header=0)
 
     find = real_name["file_Name"]
@@ -168,7 +220,11 @@ def upload_model():
     else:
         real_major = "테스트 데이터가 아닙니다."
 
+<<<<<<< HEAD
+    img_src = 'C:/Users/sinb1/1111111/static/IMG/' + filename
+=======
     img_src = 'E:/web/static/IMG/' + filename
+>>>>>>> 8a4ccccf1449c53c33e3f49fb764fb52584aae44
     img = transform_image(img_src)
     pred_major, pred_minor, major_filename, minor_filename, log_time = get_prediction(img)
     pred_major = '실제 작물 종류 : ' + pred_major
@@ -183,4 +239,8 @@ def upload_model():
 
 
 if __name__ == '__main__':
+<<<<<<< HEAD
+    app.run('192.168.56.1', port=5000, debug=True)
+=======
     app.run('113.198.138.224', port=5000, debug=True)
+>>>>>>> 8a4ccccf1449c53c33e3f49fb764fb52584aae44

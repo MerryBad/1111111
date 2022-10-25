@@ -3,6 +3,15 @@
 <link rel="stylesheet" href="../static/style.css">
 <head>
   <title>작물 종류 및 생육 단계 식별</title>
+<<<<<<< HEAD
+    <script src="http://code.jquery.com/jquery-1.11.2.min.js"></script>
+    <script type="text/javascript">
+            function clickBtn(){
+                    alert("실행중입니다.");
+            }
+    </script>
+=======
+>>>>>>> 8a4ccccf1449c53c33e3f49fb764fb52584aae44
 </head>
 <header>
     <h2>작물 종류 및 생육 단계 식별</h2>
@@ -38,6 +47,32 @@
 
     {% endif %}
         <div style="float: bottom;">
+<<<<<<< HEAD
+            <div id="loading" style="margin-left: 0px;">
+                <img src="https://www.railtrip.co.kr/image/loading2.gif"></div>
+            <form method="post" action="/upload_model" enctype="multipart/form-data">
+                <p>
+                    <input type="file"  accept=".jpg" name=file>
+                    <button type="submit" id="lodingBtn">실행</button>
+                </p>
+            </form>
+        </div>
+
+    </div>
+    </div>
+</body>
+
+<script src="http://code.jquery.com/jquery-latest.min.js"></script>
+<script>
+    $(document).ready(function() {
+    $('#loading').hide();
+    $('#lodingBtn').click(function(){
+        $('#loading').show();
+        return true;
+        });
+    });
+</script>
+=======
             <form method="post" action="/upload_model" enctype="multipart/form-data">
                 <p>
                     <input type="file"  accept=".jpg" name=file>
@@ -48,3 +83,4 @@
     </div>
     </div>
 </body>
+>>>>>>> 8a4ccccf1449c53c33e3f49fb764fb52584aae44

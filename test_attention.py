@@ -5,8 +5,13 @@ import warnings
 import cv2
 from albumentations.pytorch import ToTensorV2
 import albumentations
+<<<<<<< HEAD
+#from pytorch_grad_cam import GradCAM
+#from pytorch_grad_cam.utils.image import show_cam_on_image
+=======
 from pytorch_grad_cam import GradCAM
 from pytorch_grad_cam.utils.image import show_cam_on_image
+>>>>>>> 8a4ccccf1449c53c33e3f49fb764fb52584aae44
 import numpy as np
 from PIL import Image
 import torch

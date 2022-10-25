@@ -9,7 +9,11 @@
       <sourceFolder url="file://$MODULE_DIR$/static/uploads" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/assets" isTestSource="false" />
     </content>
+<<<<<<< HEAD
+    <orderEntry type="jdk" jdkName="Python 3.8 (semifactual) (2)" jdkType="Python SDK" />
+=======
     <orderEntry type="inheritedJdk" />
+>>>>>>> 8a4ccccf1449c53c33e3f49fb764fb52584aae44
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="library" name="Chart.js" level="application" />
   </component>
