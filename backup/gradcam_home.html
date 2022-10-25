@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<link rel="stylesheet" href="../static/style.css">
+<head>
+  <title>작물 종류 및 생육 단계 식별</title>
+</head>
+<header>
+    <h2>작물 종류 및 생육 단계 식별</h2>
+    <span><a href="/model">작물종류/생육단계 식별</a></span>
+    <span><a href="#">Grad-CAM</a></span>
+    <span><a href="#">실험실 정보?</a></span>
+</header>
+<body>
+    <div class="container" style="justify-content: space-around; align-content: space-around">
+    <div><p style="text-align: center">작물종류/생육단계 식별</p></div>
+    {% if filename %}
+       <div class="inner-div" style="vertical-align: middle; justify-content: space-between; text-align: center; margin-left: 10%">
+            <div style="float:left; width:30%;">
+                <p> 원본 이미지 </p>
+                <img src="{{url_for('static', filename=filename)}}" alt="">
+            </div>
+            <div style="float:left; width:30%;">
+                <p> 작물 종류 Grad-CAM </p>
+                <img src="{{url_for('static', filename=grad_major_image)}}" alt="">
+            </div>
+            <div style="float:left; width:30%;">
+               <p> 생육 단계 Grad-CAM </p>
+               <img src="{{url_for('static', filename=grad_minor_image)}}" alt="">
+            </div>
+       </div>
+        <div style="float:bottom; margin-top:400px; margin-bottom:10px">
+            <p>작물 종류 : {{major}}  생육 단계 : {{minor}}</p>
+            <p>{{time}}</p>
+            <p>{{time_grad}}</p>
+        </div>
+    {% endif %}
+    <form method="post" action="/upload" enctype="multipart/form-data">
+        <p>
+            <input type="file" name=file >
+            <input type="submit" value="실행">
+        </p>
+    </form>
+    </div>
+</body>

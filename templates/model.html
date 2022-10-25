@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<link rel="stylesheet" href="../static/style.css">
+<head>
+  <title>작물 종류 및 생육 단계 식별</title>
+</head>
+<header>
+    <h2>작물 종류 및 생육 단계 식별</h2>
+    <span><a href="/model">작물종류/생육단계 식별</a></span>
+    <span><a href="/gradcam_home">Grad-CAM</a></span>
+    <span><a href="http://ailab.cbnu.ac.kr/ko/">연구실</a></span>
+</header>
+<body>
+    <div class="container" style="justify-content: space-around;  align-content: space-around">
+    <div><p style="text-align: center">작물종류/생육단계 식별</p></div>
+    {% if filename %}
+       <div class="inner-div" style="display:flex; vertical-align: middle;  text-align: center; margin-left: 10%">
+            <div style="float:left; width:30%;">
+                <p><img src="{{url_for('static', filename=filename)}}" alt="" style="width:100%; height: 100%; object-fit: fill"></p>
+            </div>
+            <div style="float:left; width:50%; margin-left: 10%">
+                <p>{{real_major}} {{real_minor}}</p>
+                <p>{{pred_major}} {{pred_minor}}</p>
+                <p>{{time}}</p>
+            </div>
+       </div>
+        <div style="clear: top; display: flex; justify-content: space-around">
+           <div style="float:left; width:30%; margin-top: 20px;">
+                <p> 작물 종류 예측 확률 </p>
+                <img src="{{url_for('static', filename=major_filename)}}" alt=""style=" width: 100%; height: 300px; object-fit: fill">
+            </div>
+
+           <div style="float:left; width:30%; margin-top: 20px; margin-right: 5px">
+                <p> 생육 단계 예측 확률 </p>
+                <img src="{{url_for('static', filename=minor_filename)}}" alt=""style=" width: 100%; height: 300px; object-fit: fill">
+           </div>
+        </div>
+
+    {% endif %}
+        <div style="float: bottom;">
+            <form method="post" action="/upload_model" enctype="multipart/form-data">
+                <p>
+                    <input type="file"  accept=".jpg" name=file>
+                    <input type="submit" value="실행">
+                </p>
+            </form>
+        </div>
+    </div>
+    </div>
+</body>

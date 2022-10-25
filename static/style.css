@@ -1,0 +1,63 @@
+/** code by webdevtrick ( https://webdevtrick.com ) **/
+@font-face {
+    font-family: "DalseoDarling";
+    src:url("DalseoDarling.ttf") format("truetype");
+    font-weight: normal;
+}
+header {
+    font-family: "DalseoDarling", serif;
+    font-size-adjust: 100;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 30px;
+    padding: 1rem;
+    color: white;
+    background: teal;
+    font-weight: bold;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+a{
+    font-family: "DalseoDarling", serif;
+    font-size-adjust: 100;
+    text-decoration-line: none;
+}
+a:link {
+  color : white;
+}
+a:visited {
+  color : white;
+}
+a:hover {
+  color : greenyellow;
+}
+a:active {
+  color : springgreen;
+}
+body {
+    font-family: "DalseoDarling", serif;
+    font-size-adjust: 100;
+    margin: 0;
+    padding-top:50px;
+    min-height: 100vh;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('background.jpg');
+    background-size: cover;
+}
+p{
+    font-family: "DalseoDarling", serif;
+    font-size-adjust: 100;
+    font-weight: bold;
+    padding: 10px;
+    background-color: #ffffff;
+    background-color: rgba( 255, 255, 255, 0.7 );
+}
+h1, span {
+    font-family: "DalseoDarling", serif;
+    font-size-adjust: 100;
+    /*margin: 0;*/
+    /*padding-right: 20px;*/
+    align-content: center;
+}
